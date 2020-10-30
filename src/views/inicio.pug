@@ -1,0 +1,37 @@
+extends ./layout/index
+
+block slider
+  .slider
+    h1 Río de Janeiro
+    em Aventura
+
+block contenido
+  main.container.mt-5
+    h2.text-center.mb-5 Nuestra Agencia
+
+    .row.mb-5
+      .col-md-6
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugit quidem! Esse labore magnam dicta at ratione iusto deleniti quo temporibus est corporis, numquam repellat velit laborum. Atque, dolores iusto?
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugit quidem! Esse labore magnam dicta at ratione iusto deleniti quo temporibus est corporis, numquam repellat velit laborum. Atque, dolores iusto?
+
+      .col-md-6
+        img(src="/img/inicio_nosotros.jpg", alt="Sobre nosotros", class="img-fluid")
+    
+    include ./layout/bloque-viajes
+  
+  .descuento
+    .container
+      .row
+        .col-md-6
+          .contenido
+            h3 8% de Descuento
+            p.titulo Viaje a Canada
+            p.fecha 20 de Marzo 2021 ~ 28 de Marzo de 2021
+            p.precio $50000
+
+  .container
+    h2.mt-5.text-center Opiniones
+
+    .row
+      include ./layout/bloque-opiniones
+  

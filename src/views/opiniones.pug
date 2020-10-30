@@ -1,0 +1,34 @@
+extends ./layout/index
+
+block contenido
+  main.container
+    h1.text-center.pt-5= pag
+
+    .row
+      .col-12.text-center
+        blockquote Lea las opiniones de nuestros clientes
+      
+      include ./layout/bloque-opiniones
+
+    .row.pt-5.justify-content-center
+      .col-12.text-center
+        h2 Agregar la tuya
+
+      .col-md-8
+        if(errores)
+          each error in errores
+            .col.alert.alert-danger.text-center= error.mensaje
+
+      .col-md-8
+        form(action="/opiniones", method="post")
+          .form-group
+            label(for="nombre") Nombre
+            input#nombre(type="text", name="nombre", class="form-control", value= nombre)
+          .form-group
+            label(for="email") Email
+            input#email(type="text", name="email", class="form-control", value= email)
+          .form-group
+            label(for="mensaje") Mensaje
+            textarea#mensaje(name="mensaje", class="form-control", rows="3") #{mensaje}
+
+          button(type="submit", class="btn btn-success btn-block") Guardar
